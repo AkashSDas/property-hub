@@ -23,7 +23,14 @@ public class SearchProperty extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		LinkedList<Property> properties = SearchPropertyDB.getAllProperties();
+		LinkedList<Property> properties = new LinkedList<>();
+		String location = request.getParameter("location");
+		if (location.length() == 0) {
+			properties = SearchPropertyDB.getAllProperties();
+		} else {
+			properties = SearchPropertyDB.getPropertiesForLocation(location);
+		}
+
 		request.setAttribute("properties", properties);
 		String jspFileUrl = "/views/SearchProperty.jsp";
 		getServletContext().getRequestDispatcher(jspFileUrl).forward(request, response);
