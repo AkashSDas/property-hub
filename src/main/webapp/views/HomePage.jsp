@@ -1,19 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <!DOCTYPE html>
-    <html lang="en">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+        <!DOCTYPE html>
+        <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Home</title>
-    </head>
+        <head>
+            <meta charset="UTF-8">
+            <title>Home</title>
+        </head>
 
-    <body>
-        <jsp:include page="Navbar.jsp" />
+        <body>
+            <jsp:include page="Navbar.jsp" />
 
-        <main>
-            <jsp:include page="Tagline.jsp" />
-            <jsp:include page="PropertySearchBar.jsp" />
-        </main>
-    </body>
+            <main>
+                <jsp:include page="Tagline.jsp" />
+                <jsp:include page="PropertySearchBar.jsp" />
 
-    </html>
+                <section>
+                    <h2>Properties List</h2>
+                    <div>
+                        <c:forEach items="${properties}" var="property">
+                            <h2>${property.getTitle()}</h2>
+                        </c:forEach>
+                    </div>
+                </section>
+            </main>
+        </body>
+
+        </html>
