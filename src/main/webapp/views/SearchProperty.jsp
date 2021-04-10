@@ -11,12 +11,22 @@
         <body>
             <jsp:include page="Navbar.jsp" />
 
-            <h2>All properties</h2>
-
             <main>
-                <c:forEach items="${properties}" var="property">
-                    <h2>${property.getTitle()}</h2>
-                </c:forEach>
+                <h2>All properties</h2>
+
+                <div>
+                    <c:choose>
+                        <c:when test="${properties.size() != 0}">
+                            <c:forEach items="${properties}" var="property">
+                                <h2>${property.getTitle()}</h2>
+                            </c:forEach>
+                        </c:when>
+                        <c:otherwise>
+                            <h3>🙁 No properties available for this location.</h3>
+                        </c:otherwise>
+                    </c:choose>
+
+                </div>
             </main>
         </body>
 
