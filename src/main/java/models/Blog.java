@@ -13,6 +13,8 @@ public class Blog implements Serializable {
     private String title;
     private String description;
     private String text;
+    private String coverImageUrl;
+    private String gifUrl;
 
     // Empty constructor (is needed as its a Java Bean)
     public Blog() {
@@ -23,10 +25,12 @@ public class Blog implements Serializable {
         this.setTitle("");
         this.setDescription("");
         this.setText("");
+        this.setCoverImageUrl("");
+        this.setGifUrl("");
     }
 
     public Blog(int id, String authorName, String authorImageUrl, String publishedDate, String title,
-            String description, String text) {
+            String description, String text, String coverImageUrl, String gifUrl) {
         this.setId(id);
         this.setAuthorName(authorName);
         this.setAuthorImageUrl(authorImageUrl);
@@ -34,6 +38,8 @@ public class Blog implements Serializable {
         this.setTitle(title);
         this.setDescription(description);
         this.setText(text);
+        this.setCoverImageUrl(coverImageUrl);
+        this.setGifUrl(gifUrl);
     }
 
     int getWordCount() {
@@ -108,5 +114,21 @@ public class Blog implements Serializable {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getCoverImageUrl() {
+        return coverImageUrl;
+    }
+
+    public void setCoverImageUrl(String coverImageUrl) {
+        this.coverImageUrl = coverImageUrl;
+    }
+
+    public String getGifUrl() {
+        return gifUrl;
+    }
+
+    public void setGifUrl(String gifUrl) {
+        this.gifUrl = gifUrl;
     }
 }
