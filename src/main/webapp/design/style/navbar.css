@@ -40,9 +40,10 @@
 
 .navbar-nav .logo a:hover {
   transform: scale(1.125) rotate(-2deg);
-  animation: color-rotate 1s;
+  color: rgb(0, 153, 255);
+  /* animation: color-rotate 3s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation-direction: alternate; */
 }
 
 .navbar-nav .left {
