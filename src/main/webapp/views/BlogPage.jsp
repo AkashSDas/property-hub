@@ -13,18 +13,28 @@
             <jsp:include page="Navbar.jsp" />
 
             <main>
-                <h2>PropertyHub Blog</h2>
+                <section class="blog">
+                    <h2>PropertyHub Blog</h2>
 
-                <section>
-                    <c:forEach items="${blogs}" var="blog">
-                        <form action="blog-info" method="GET">
-                            <button type="submit">
-                                <h2>${blog.getTitle()}</h2>
-                                <img src="${blog.getCoverImageUrl()}" alt="${blog.getTitle()}">
-                            </button>
-                            <input name="blogId" type="hidden" value="${blog.getId()}" />
-                        </form>
-                    </c:forEach>
+                    <div class="blog-list">
+                        <c:forEach items="${blogs}" var="blog">
+                            <form action="blog-info" method="GET">
+                                <div class="wrapper">
+                                    <img src="${blog.getCoverImageUrl()}" alt="${blog.getTitle()}">
+
+                                    <div class="blog-info">
+                                        <h2>${blog.getTitle()}</h2>
+                                        <p class="info">${blog.getDescription()}</p>
+                                        <div>Written by ${blog.getAuthorName()}</div>
+                                        <div class="reading-info">${blog.getWordCount()} words,
+                                            ${blog.getMinutesToRead()} mins read</div>
+
+                                        <button type="submit">Read</button>
+                                    </div>
+                                </div>
+                                <input name="blogId" type="hidden" value="${blog.getId()}" />
+                            </form>
+                        </c:forEach>
                 </section>
             </main>
 
