@@ -33,13 +33,13 @@
 .navbar-nav .logo a {
   font-family: var(--prompy-font-family);
   font-size: 2.2rem;
+  font-weight: bold;
   text-shadow: var(--box-shadow);
   transition: all 300ms ease-in-out;
 }
 
 .navbar-nav .logo a:hover {
   transform: scale(1.125) rotate(-2deg);
-  color: yellowgreen;
   animation: color-rotate 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
