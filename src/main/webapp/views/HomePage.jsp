@@ -19,7 +19,15 @@
                     <h2>Properties List</h2>
                     <div>
                         <c:forEach items="${properties}" var="property">
-                            <h2>${property.getTitle()}</h2>
+                            <!-- <h2 onclick="window.location='property-info'">${property.getTitle()}</h2> -->
+                            <a href="property-info">
+                                <form action="property-info" method="GET">
+                                    <button type="submit">
+                                        <h2>${property.getTitle()}</h2>
+                                    </button>
+                                    <input name="propertyId" type="hidden" value="${property.getId()}" />
+                                </form>
+                            </a>
                         </c:forEach>
                     </div>
                 </section>
