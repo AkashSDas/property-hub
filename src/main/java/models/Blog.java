@@ -42,12 +42,12 @@ public class Blog implements Serializable {
         this.setGifUrl(gifUrl);
     }
 
-    int getWordCount() {
+    public int getWordCount() {
         int wordCount = this.text.trim().split(" ").length;
         return wordCount;
     }
 
-    int getMinutesToRead() {
+    public int getMinutesToRead() {
         int minutesToRead = (this.getWordCount() / 100 + 1);
         return minutesToRead;
     }
