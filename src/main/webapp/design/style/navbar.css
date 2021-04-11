@@ -6,6 +6,7 @@
   box-shadow: var(--box-shadow);
   position: fixed;
   width: 100%;
+  z-index: 2;
 }
 
 .navbar-nav {

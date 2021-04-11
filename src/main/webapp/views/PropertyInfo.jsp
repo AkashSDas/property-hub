@@ -13,46 +13,53 @@
             <jsp:include page="Navbar.jsp" />
 
             <main>
-                <h2>${property.getTitle()}</h2>
-                <p>${property.getDescription()}</p>
-                <span>${property.getStatus()}</span>
+                <section class="property-info">
+                    <h2>${property.getTitle()}</h2>
 
-                <div>
-                    <c:forEach items="${propertyImageUrls}" var="url">
-                        <img src="${url}" alt="${property.getTitle()}">
-                    </c:forEach>
-                </div>
+                    <p>${property.getDescription()}</p>
 
-                <p><strong>Address: </strong> ${property.address}</p>
+                    <div class="grid">
+                        <c:forEach items="${propertyImageUrls}" var="url">
+                            <img src="${url}" alt="${property.getTitle()}">
+                        </c:forEach>
+                    </div>
 
-                <div>
-                    <img src="${propertyOwner.getOwnerImageUrl()}"
-                        alt="${propertyOwner.getFirstName()} ${propertyOwner.getLastName()}">
+                    <p class="address"><strong>Address: </strong> ${property.address}</p>
 
-                    <p>Owner of this property is ${propertyOwner.getFirstName()} ${propertyOwner.getLastName()} who can
-                        be
-                        contacted
-                        using the owner's phone number ${propertyOwner.getPhoneNumber()}
+                    <div class="owner-info">
+                        <img src="${propertyOwner.getOwnerImageUrl()}"
+                            alt="${propertyOwner.getFirstName()} ${propertyOwner.getLastName()}">
 
-                        <c:if test="${propertyOwner.getEmail() != null}">
-                            or using email address ${propertyOwner.getEmail()}
-                        </c:if>.
-                    </p>
-                </div>
+                        <p>Owner of this property is ${propertyOwner.getFirstName()} ${propertyOwner.getLastName()} who
+                            can
+                            be
+                            contacted
+                            using the owner's phone number ${propertyOwner.getPhoneNumber()}
 
-                <div>
-                    <c:choose>
-                        <c:when test="${property.getStatus() == 'buy'}">
-                            <button>Buy</button>
-                        </c:when>
-                        <c:when test="${property.getStatus() == 'rent'}">
-                            <button>Rent</button>
-                        </c:when>
-                        <c:otherwise>
-                            <button>Sold</button>
-                        </c:otherwise>
-                    </c:choose>
-                </div>
+                            <c:if test="${propertyOwner.getEmail() != null}">
+                                or using email address ${propertyOwner.getEmail()}
+                            </c:if>.
+                        </p>
+                    </div>
+
+                    <div class="status">
+                        <c:choose>
+                            <c:when test="${property.getStatus() == 'buy'}">
+                                <button>Buy</button>
+                            </c:when>
+                            <c:when test="${property.getStatus() == 'rent'}">
+                                <button>Rent</button>
+                            </c:when>
+                            <c:otherwise>
+                                <button>Sold</button>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
+
+                    <div class="img-wrapper">
+                        <img class="gif" src="${property.getGifUrl()}" alt="${property.getTitle()}">
+                    </div>
+                </section>
             </main>
 
             <jsp:include page="Footer.jsp" />
