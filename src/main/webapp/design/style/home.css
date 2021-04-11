@@ -24,7 +24,7 @@
 }
 
 .home-page-property-list .property-list .wrapper:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   transform: translateY(-3px);
 }
 
