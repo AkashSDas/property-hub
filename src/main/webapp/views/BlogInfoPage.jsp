@@ -12,11 +12,13 @@
         <jsp:include page="Navbar.jsp" />
 
         <main>
-            <h2>${blog.getTitle()}</h2>
+            <section class="blog-info">
+                <h2>${blog.getTitle()}</h2>
 
-            <img src="${blog.getGifUrl()}" alt="${blog.getTitle()}">
+                <img src="${blog.getGifUrl()}" alt="${blog.getTitle()}">
 
-            <p>${blog.getText()}</p>
+                <p>${blog.getText()}</p>
+            </section>
         </main>
 
         <jsp:include page="Footer.jsp" />

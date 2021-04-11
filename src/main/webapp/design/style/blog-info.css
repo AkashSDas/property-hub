@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.blog-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-info h2 {
+  font-family: var(--prompy-font-family);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.blog-info img {
+  width: 70%;
+  margin: 3rem auto;
+}
+
+.blog-info p {
+  font-family: var(--jost-font-family);
+  font-size: 1.2rem;
+  color: var(--text-color-2);
+  text-align: left;
+}
