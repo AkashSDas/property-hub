@@ -6,6 +6,7 @@
         <head>
             <meta charset="UTF-8">
             <title>Loans</title>
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/design/style.css" type="text/css">
         </head>
 
         <body>
