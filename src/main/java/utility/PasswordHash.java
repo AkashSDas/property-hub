@@ -4,16 +4,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
-class PasswordHashGenerate {
-    String hashedPassword;
-    byte[] salt;
-
-    PasswordHashGenerate(String hashedPassword, byte[] salt) {
-        this.hashedPassword = hashedPassword;
-        this.salt = salt;
-    }
-}
-
 public class PasswordHash {
     /**
      * To avoid the below warning, adding the private empty constructor Add a
