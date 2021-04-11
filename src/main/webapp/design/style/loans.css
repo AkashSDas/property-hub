@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+h2 {
+  font-family: var(--prompy-font-family);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.loan .wrapper {
+  display: flex;
+  height: 12rem;
+  background: var(--gray5);
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  margin: 2rem auto;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+.loan .wrapper:hover {
+  /* cursor: pointer; */
+  transform: translateY(-3px);
+}
+
+.loan .wrapper img {
+  display: block;
+  width: 30%;
+  object-fit: cover;
+}
+
+.loan .wrapper .info {
+  padding: 1rem;
+}
+
+.loan .wrapper .info h3 {
+  font-size: 2rem;
+  font-family: var(--prompy-font-family);
+  color: var(--text-color-1);
+}
+
+.loan .wrapper .info .description {
+  font-family: var(--jost-font-family);
+  font-size: 1.2rem;
+  color: var(--text-color-2);
+  text-align: left;
+  width: 40rem;
+  white-space: nowrap;
+  overflow: scroll;
+  text-overflow: ellipsis;
+}
+
+.loan .wrapper .info .price-info {
+  margin-top: 1rem;
+  font-family: var(--prompy-font-family);
+  color: rgb(0, 132, 255);
+  font-weight: bold;
+  font-size: 1.2rem;
+}

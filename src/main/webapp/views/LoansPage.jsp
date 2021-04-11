@@ -15,10 +15,19 @@
             <main>
                 <h2>Bank Loans</h2>
 
-                <section>
+                <section class="loan">
                     <c:forEach items="${loans}" var="loan">
-                        <h3>${loan.getBankName()}</h3>
-                        <img src="${loan.getBankLogoImageUrl()}" alt="${loan.getBankName()}">
+                        <div class="wrapper">
+                            <img src="${loan.getBankLogoImageUrl()}" alt="${loan.getBankName()}">
+
+                            <div class="info">
+                                <h3>${loan.getBankName()}</h3>
+                                <div class="description">${loan.getDescription()}</div>
+                                <div class="price-info">
+                                    $${loan.getMinLoanAmount()} - $${loan.getMaxLoanAmount()}
+                                </div>
+                            </div>
+                        </div>
                     </c:forEach>
                 </section>
             </main>
