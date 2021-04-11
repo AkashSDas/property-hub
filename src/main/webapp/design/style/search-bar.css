@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.search-bar-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.search-bar-form label {
+  font-family: var(--prompy-font-family);
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 0 1.5rem;
+}
+
+.search-bar-form .input-btn-inline {
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.search-bar-form .input-btn-inline input {
+  width: 70%;
+  background: var(--gray5);
+  border-radius: 40px;
+  border: none;
+  box-shadow: var(--box-shadow);
+  outline: none;
+  height: 3.4rem;
+  margin: 0 1.5rem;
+  padding: 0 1.5rem;
+  color: var(--text-color-2);
+  font-size: 1.2rem;
+  font-family: var(--jost-font-family);
+}
+
+.search-bar-form .input-btn-inline input::placeholder {
+  color: var(--text-color-2);
+  font-size: 1.2rem;
+  font-family: var(--jost-font-family);
+}
+
+.search-bar-form .input-btn-inline button {
+  width: 30%;
+  margin: 0 1.5rem;
+  height: 3.4rem;
+  border-radius: 40px;
+  box-shadow: var(--box-shadow);
+  font-family: var(--prompy-font-family);
+  font-size: 1.2rem;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  background: var(--purple-color);
+  color: var(--text-color-1);
+}
+
+.search-bar-form .input-btn-inline button:hover {
+  cursor: pointer;
+}
