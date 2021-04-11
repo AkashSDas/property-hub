@@ -24,6 +24,7 @@
                                 <form action="property-info" method="GET">
                                     <button type="submit">
                                         <h2>${property.getTitle()}</h2>
+                                        <img src="${property.getCoverImageUrl()}" alt="${property.getTitle()}">
                                     </button>
                                     <input name="propertyId" type="hidden" value="${property.getId()}" />
                                 </form>

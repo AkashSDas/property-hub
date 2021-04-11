@@ -23,15 +23,22 @@
                 </div>
 
                 <p><strong>Address: </strong> ${property.address}</p>
-                <p>Owner of this property is ${propertyOwner.getFirstName()} ${propertyOwner.getLastName()} who can be
-                    contacted
-                    using the owner's phone number ${propertyOwner.getPhoneNumber()}
 
-                    <c:if test="${propertyOwner.getEmail() != null}">
-                        or using email address ${propertyOwner.getEmail()}
-                    </c:if>.
-                </p>
-                ${property.getStatus()}
+                <div>
+                    <img src="${propertyOwner.getOwnerImageUrl()}"
+                        alt="${propertyOwner.getFirstName()} ${propertyOwner.getLastName()}">
+
+                    <p>Owner of this property is ${propertyOwner.getFirstName()} ${propertyOwner.getLastName()} who can
+                        be
+                        contacted
+                        using the owner's phone number ${propertyOwner.getPhoneNumber()}
+
+                        <c:if test="${propertyOwner.getEmail() != null}">
+                            or using email address ${propertyOwner.getEmail()}
+                        </c:if>.
+                    </p>
+                </div>
+
                 <div>
                     <c:choose>
                         <c:when test="${property.getStatus() == 'buy'}">
