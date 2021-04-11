@@ -16,6 +16,8 @@
                 <section class="blog">
                     <h2>PropertyHub Blog</h2>
 
+                    <div class="hr"></div>
+
                     <div class="blog-list">
                         <c:forEach items="${blogs}" var="blog">
                             <form action="blog-info" method="GET">

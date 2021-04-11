@@ -15,6 +15,8 @@
             <main>
                 <h2 class="loans-h2">Bank Loans</h2>
 
+                <div class="hr"></div>
+
                 <section class="loan">
                     <c:forEach items="${loans}" var="loan">
                         <div class="wrapper">

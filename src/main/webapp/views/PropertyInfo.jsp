@@ -16,6 +16,8 @@
                 <section class="property-info">
                     <h2>${property.getTitle()}</h2>
 
+                    <div class="hr"></div>
+
                     <p>${property.getDescription()}</p>
 
                     <div class="grid">

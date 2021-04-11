@@ -15,6 +15,8 @@
             <main>
                 <h2>Search Results</h2>
 
+                <div class="hr"></div>
+
                 <div>
                     <c:choose>
                         <c:when test="${properties.size() != 0}">

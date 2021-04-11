@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+footer {
+  margin-top: 10rem;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: var(--nav-size);
+}
+
+footer a {
+  font-size: 1.8rem;
+  color: rgb(0, 110, 255);
+  text-decoration: underline;
+}

@@ -14,6 +14,9 @@
 
             <main>
                 <jsp:include page="Tagline.jsp" />
+
+                <div class="hr"></div>
+
                 <jsp:include page="PropertySearchBar.jsp" />
 
                 <section class="home-page-property-list">

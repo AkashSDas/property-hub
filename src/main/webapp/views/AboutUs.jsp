@@ -13,11 +13,13 @@
 
 
         <main>
-            <h2>About Us</h2>
+            <h2 class="loans-h2">About Us</h2>
+
+            <div class="hr"></div>
 
             <jsp:include page="Tagline.jsp" />
 
-            <p>
+            <p class="about-us">
                 Launched in 1999, PropertyHub is World's No. 1 property portal, deals with every aspect of the
                 consumers needs in the real estate industry. It is an online forum where buyers, sellers and
                 brokers/agents can exchange information about real estate properties quickly, effectively and

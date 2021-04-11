@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.about-us {
+  font-family: var(--jost-font-family);
+  font-size: 1.2rem;
+  color: var(--text-color-2);
+  text-align: left;
+}

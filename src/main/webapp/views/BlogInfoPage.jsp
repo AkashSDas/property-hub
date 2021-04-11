@@ -15,6 +15,8 @@
             <section class="blog-info">
                 <h2>${blog.getTitle()}</h2>
 
+                <div class="hr"></div>
+
                 <img src="${blog.getGifUrl()}" alt="${blog.getTitle()}">
 
                 <p>${blog.getText()}</p>
