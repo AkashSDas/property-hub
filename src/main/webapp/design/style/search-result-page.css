@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.no-result {
+  text-align: center;
+  font-size: 2.4rem;
+  color: rgb(0, 153, 255);
+  font-family: var(--prompy-font-family);
+  font-weight: bold;
+}

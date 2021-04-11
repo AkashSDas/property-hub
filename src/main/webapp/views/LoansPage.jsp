@@ -13,7 +13,7 @@
             <jsp:include page="Navbar.jsp" />
 
             <main>
-                <h2>Bank Loans</h2>
+                <h2 class="loans-h2">Bank Loans</h2>
 
                 <section class="loan">
                     <c:forEach items="${loans}" var="loan">
