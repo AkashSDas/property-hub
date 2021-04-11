@@ -11,6 +11,7 @@ public class PropertyOwner implements Serializable {
     private String lastName;
     private String phoneNumber;
     private String email;
+    private String ownerImageUrl;
 
     // Empty constructor (is needed as its a Java Bean)
     public PropertyOwner() {
@@ -19,14 +20,17 @@ public class PropertyOwner implements Serializable {
         this.setLastName("");
         this.setPhoneNumber("");
         this.setEmail("");
+        this.setOwnerImageUrl("");
     }
 
-    public PropertyOwner(int id, String firstName, String lastName, String phoneNumber, String email) {
+    public PropertyOwner(int id, String firstName, String lastName, String phoneNumber, String email,
+            String ownerImageUrl) {
         this.setId(id);
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setPhoneNumber(phoneNumber);
         this.setEmail(email);
+        this.setOwnerImageUrl(ownerImageUrl);
     }
 
     /**
@@ -75,5 +79,13 @@ public class PropertyOwner implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getOwnerImageUrl() {
+        return ownerImageUrl;
+    }
+
+    public void setOwnerImageUrl(String ownerImageUrl) {
+        this.ownerImageUrl = ownerImageUrl;
     }
 }

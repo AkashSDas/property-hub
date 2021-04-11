@@ -214,7 +214,8 @@ public class SearchPropertyDB {
                 String lastName = resultSet.getString("lastName");
                 String phoneNumber = resultSet.getString("phoneNumber");
                 String email = resultSet.getString("email");
-                owner = new PropertyOwner(id, firstName, lastName, phoneNumber, email);
+                String ownerImageUrl = resultSet.getString("owner_image_url");
+                owner = new PropertyOwner(id, firstName, lastName, phoneNumber, email, ownerImageUrl);
                 break;
             }
         } catch (SQLException se) {
