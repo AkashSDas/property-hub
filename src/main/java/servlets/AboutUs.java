@@ -11,17 +11,19 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/about-us")
 public class AboutUs extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       /
-    public AboutUs() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public AboutUs() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String jspFileUrl = "/views/AboutUs.jsp";
 		getServletContext().getRequestDispatcher(jspFileUrl).forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
