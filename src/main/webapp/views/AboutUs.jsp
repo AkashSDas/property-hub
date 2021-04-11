@@ -25,6 +25,8 @@
                 making headlines in the realty sector.
             </p>
         </main>
+
+        <jsp:include page="Footer.jsp" />
     </body>
 
     </html>

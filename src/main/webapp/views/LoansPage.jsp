@@ -22,6 +22,7 @@
                 </section>
             </main>
 
+            <jsp:include page="Footer.jsp" />
         </body>
 
         </html>

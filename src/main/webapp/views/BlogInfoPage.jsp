@@ -17,6 +17,8 @@
 
             <p>${blog.getText()}</p>
         </main>
+
+        <jsp:include page="Footer.jsp" />
     </body>
 
     </html>
