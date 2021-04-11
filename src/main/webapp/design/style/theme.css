@@ -72,6 +72,6 @@ a {
 
 main {
   padding-top: calc(var(--nav-size) * 2);
-  padding-left: 5rem;
-  padding-right: 5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }

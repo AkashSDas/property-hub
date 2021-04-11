@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+.home-page-property-list h2 {
+  font-family: var(--prompy-font-family);
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.home-page-property-list .property-list .form button {
+  border: none;
+  outline: none;
+}
+
+.home-page-property-list .property-list .wrapper {
+  display: flex;
+  height: 16rem;
+  background: var(--gray5);
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  margin: 2rem auto;
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+}
+
+.home-page-property-list .property-list .wrapper:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+}
+
+.home-page-property-list .property-list .wrapper img {
+  display: block;
+  width: 30%;
+  object-fit: cover;
+}
+
+.home-page-property-list .property-list .wrapper .property-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.home-page-property-list .property-list .wrapper .property-info h3 {
+  font-size: 2rem;
+  font-family: var(--prompy-font-family);
+  color: var(--text-color-1);
+}
+
+.home-page-property-list .property-list .wrapper .property-info .info {
+  font-family: var(--jost-font-family);
+  font-size: 1.2rem;
+  color: var(--text-color-2);
+  text-align: left;
+  width: 40rem;
+  white-space: nowrap;
+  overflow: scroll;
+  text-overflow: ellipsis;
+}
+
+.home-page-property-list .property-list .wrapper .property-info .price-info {
+  margin-top: 1rem;
+  font-family: var(--prompy-font-family);
+  color: rgb(0, 132, 255);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.home-page-property-list .btn-grp {
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.home-page-property-list .green-btn,
+.home-page-property-list .black-btn {
+  width: 20rem;
+  height: 3rem;
+  border-radius: 40px;
+  box-shadow: var(--box-shadow);
+  border: none;
+  outline: none;
+  margin: auto 0.5rem;
+  font-family: var(--prompy-font-family);
+  font-weight: bold;
+}
+
+.home-page-property-list .green-btn:hover,
+.home-page-property-list .black-btn:hover {
+  cursor: pointer;
+}
+
+.home-page-property-list .green-btn {
+  background-color: var(--green-color);
+  color: var(--text-color-3);
+}
+
+.home-page-property-list .black-btn {
+  background-color: var(--gray6);
+  color: var(--text-color-1);
+  height: 3.4rem;
+}
