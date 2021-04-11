@@ -16,15 +16,13 @@
 
                 <section>
                     <c:forEach items="${blogs}" var="blog">
-                        <a href="#">
-                            <form action="." method="GET">
-                                <button type="submit">
-                                    <h2>${blog.getTitle()}</h2>
-                                    <img src="${blog.getCoverImageUrl()}" alt="${blog.getTitle()}">
-                                </button>
-                                <input name="blogId" type="hidden" value="${blog.getId()}" />
-                            </form>
-                        </a>
+                        <form action="." method="GET">
+                            <button type="submit">
+                                <h2>${blog.getTitle()}</h2>
+                                <img src="${blog.getCoverImageUrl()}" alt="${blog.getTitle()}">
+                            </button>
+                            <input name="blogId" type="hidden" value="${blog.getId()}" />
+                        </form>
                     </c:forEach>
                 </section>
             </main>
