@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+:root {
+  --gray1: white;
+  --gray2: #868686;
+  --gray3: #3a3a3a;
+  --gray4: #1f1f1f;
+  --gray5: #1b1b1b;
+  --gray6: black;
+
+  --purple-color: #5200ff;
+  --red-color: #e24545;
+  --green-color: #62c559;
+
+  --primary-color: var(--gray4);
+  --accent-color: var(--gray5);
+
+  --text-color-1: var(--gray1);
+  --text-color-2: var(--gray2);
+  --text-color-3: var(--gray6);
+
+  --box-shadow: -4px -4px 10px rgba(0, 0, 0, 0.35),
+    4px 4px 10px rgba(0, 0, 0, 0.35);
+
+  --hr: 1px dashed var(--gray2);
+
+  --prompy-font-family: "Prompt", sans-serif;
+  --jost-font-family: "Jost", sans-serif;
+
+  --nav-size: 80px;
+}
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--text-color-1);
+  font-family: var(--jost-font-family);
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+main {
+  padding-top: calc(var(--nav-size) * 1.5);
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
