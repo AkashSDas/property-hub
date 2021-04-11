@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.LinkedList;
 
 import models.Property;
+import models.PropertyOwner;
 
 public class SearchPropertyDB {
 
@@ -124,4 +125,157 @@ public class SearchPropertyDB {
         return properties;
     };
 
+    public static Property getPropertiesForLocation(int propertyId) {
+        Property property = null;
+        String query = "select * from property where id = " + propertyId;
+
+        Connection conn = null;
+        Statement statement = null;
+
+        try {
+            // Register JDBC driver
+            Class.forName(DB.JDBC_DRIVER);
+
+            // Creating connection
+            conn = DriverManager.getConnection(DB.DB_URL, DB.USER, DB.PASSWORD);
+
+            // Executing a query
+            statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            // Looping through rows
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String title = resultSet.getString("title");
+                String description = resultSet.getString("description");
+                String address = resultSet.getString("address");
+                float minPrice = resultSet.getFloat("min_price");
+                float maxPrice = resultSet.getFloat("max_price");
+                String status = resultSet.getString("status"); // sold, rent, buy
+                int ownerId = resultSet.getInt("owner_id");
+
+                property = new Property(id, title, description, address, minPrice, maxPrice, status, ownerId);
+            }
+        } catch (SQLException se) {
+            // Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            // Handle errors for Class.forName
+            e.printStackTrace();
+        } finally {
+            // finally block used to close resources
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+        return property;
+    }
+
+    public static PropertyOwner getPropertyOwner(int ownerId) {
+        PropertyOwner owner = null;
+        String query = "select * from property_owner where id = " + ownerId + " limit 1";
+
+        Connection conn = null;
+        Statement statement = null;
+
+        try {
+            // Register JDBC driver
+            Class.forName(DB.JDBC_DRIVER);
+
+            // Creating connection
+            conn = DriverManager.getConnection(DB.DB_URL, DB.USER, DB.PASSWORD);
+
+            // Executing a query
+            statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            // Looping through rows
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String firstName = resultSet.getString("firstName");
+                String lastName = resultSet.getString("lastName");
+                String phoneNumber = resultSet.getString("phoneNumber");
+                String email = resultSet.getString("email");
+                owner = new PropertyOwner(id, firstName, lastName, phoneNumber, email);
+                break;
+            }
+        } catch (SQLException se) {
+            // Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            // Handle errors for Class.forName
+            e.printStackTrace();
+        } finally {
+            // finally block used to close resources
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+        return owner;
+    }
+
+    public static LinkedList<String> getPropertyImageUrls(int propertyId) {
+        LinkedList<String> urls = new LinkedList<>();
+        String query = "select * from property_image_urls where property_id = " + propertyId;
+
+        Connection conn = null;
+        Statement statement = null;
+
+        try {
+            // Register JDBC driver
+            Class.forName(DB.JDBC_DRIVER);
+
+            // Creating connection
+            conn = DriverManager.getConnection(DB.DB_URL, DB.USER, DB.PASSWORD);
+
+            // Executing a query
+            statement = conn.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+
+            // Looping through rows
+            while (resultSet.next()) {
+                String url = resultSet.getString("url");
+                urls.add(url);
+            }
+        } catch (SQLException se) {
+            // Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            // Handle errors for Class.forName
+            e.printStackTrace();
+        } finally {
+            // finally block used to close resources
+            try {
+                if (statement != null)
+                    statement.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+        return urls;
+    }
 }
