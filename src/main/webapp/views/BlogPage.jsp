@@ -16,7 +16,7 @@
 
                 <section>
                     <c:forEach items="${blogs}" var="blog">
-                        <form action="." method="GET">
+                        <form action="blog-info" method="GET">
                             <button type="submit">
                                 <h2>${blog.getTitle()}</h2>
                                 <img src="${blog.getCoverImageUrl()}" alt="${blog.getTitle()}">
