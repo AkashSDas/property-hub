@@ -14,6 +14,8 @@ public class Property implements Serializable {
     private float maxPrice;
     private String status; // sold, rent, buy
     private int ownerId;
+    private String coverImageUrl;
+    private String gifUrl;
 
     // Empty constructor (is needed as its a Java Bean)
     public Property() {
@@ -25,10 +27,12 @@ public class Property implements Serializable {
         this.setMaxPrice(0);
         this.setStatus("sold");
         this.setOwnerId(0);
+        this.setCoverImageUrl("");
+        this.setGifUrl("");
     }
 
     public Property(int id, String title, String description, String address, float minPrice, float maxPrice,
-            String status, int ownerId) {
+            String status, int ownerId, String coverImageUrl, String gifUrl) {
         this.setId(id);
         this.setTitle(title);
         this.setDescription(description);
@@ -37,6 +41,8 @@ public class Property implements Serializable {
         this.setMaxPrice(maxPrice);
         this.setStatus(status);
         this.setOwnerId(ownerId);
+        this.setCoverImageUrl(coverImageUrl);
+        this.setGifUrl(gifUrl);
     }
 
     /**
@@ -109,5 +115,21 @@ public class Property implements Serializable {
 
     public void setOwnerId(int ownerId) {
         this.ownerId = ownerId;
+    }
+
+    public String getCoverImageUrl() {
+        return coverImageUrl;
+    }
+
+    public void setCoverImageUrl(String coverImageUrl) {
+        this.coverImageUrl = coverImageUrl;
+    }
+
+    public String getGifUrl() {
+        return gifUrl;
+    }
+
+    public void setGifUrl(String gifUrl) {
+        this.gifUrl = gifUrl;
     }
 }

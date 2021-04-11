@@ -40,8 +40,11 @@ public class SearchPropertyDB {
                 float maxPrice = resultSet.getFloat("max_price");
                 String status = resultSet.getString("status"); // sold, rent, buy
                 int ownerId = resultSet.getInt("owner_id");
+                String coverImageUrl = resultSet.getString("cover_image_url");
+                String gifUrl = resultSet.getString("gif_url");
 
-                properties.add(new Property(id, title, description, address, minPrice, maxPrice, status, ownerId));
+                properties.add(new Property(id, title, description, address, minPrice, maxPrice, status, ownerId,
+                        coverImageUrl, gifUrl));
             }
         } catch (SQLException se) {
             // Handle errors for JDBC
@@ -97,8 +100,11 @@ public class SearchPropertyDB {
                 float maxPrice = resultSet.getFloat("max_price");
                 String status = resultSet.getString("status"); // sold, rent, buy
                 int ownerId = resultSet.getInt("owner_id");
+                String coverImageUrl = resultSet.getString("cover_image_url");
+                String gifUrl = resultSet.getString("gif_url");
 
-                properties.add(new Property(id, title, description, address, minPrice, maxPrice, status, ownerId));
+                properties.add(new Property(id, title, description, address, minPrice, maxPrice, status, ownerId,
+                        coverImageUrl, gifUrl));
             }
         } catch (SQLException se) {
             // Handle errors for JDBC
@@ -153,8 +159,11 @@ public class SearchPropertyDB {
                 float maxPrice = resultSet.getFloat("max_price");
                 String status = resultSet.getString("status"); // sold, rent, buy
                 int ownerId = resultSet.getInt("owner_id");
+                String coverImageUrl = resultSet.getString("cover_image_url");
+                String gifUrl = resultSet.getString("gif_url");
 
-                property = new Property(id, title, description, address, minPrice, maxPrice, status, ownerId);
+                property = new Property(id, title, description, address, minPrice, maxPrice, status, ownerId,
+                        coverImageUrl, gifUrl);
             }
         } catch (SQLException se) {
             // Handle errors for JDBC
