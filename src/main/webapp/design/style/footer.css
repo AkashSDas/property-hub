@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/* This footer is not fixed at the bottom, if content in the page
+  is less then footer won't appear at the bottom (will appear somewhere
+  in the middle. Making the footer position property as fixed will
+  make it sticky which I don't intent to do, also the background becomes
+  transparent, not sure why. */
+
 footer {
   margin-top: 10rem;
   box-shadow: var(--box-shadow);
