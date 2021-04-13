@@ -28,6 +28,7 @@
 
                     <p class="address"><strong>Address: </strong> ${property.address}</p>
 
+                    <!-- Owner info -->
                     <div class="owner-info">
                         <img src="${propertyOwner.getOwnerImageUrl()}"
                             alt="${propertyOwner.getFirstName()} ${propertyOwner.getLastName()}">
@@ -44,6 +45,7 @@
                         </p>
                     </div>
 
+                    <!-- Property status -->
                     <div class="status">
                         <c:choose>
                             <c:when test="${property.getStatus() == 'buy'}">
