@@ -10,8 +10,15 @@ import java.util.LinkedList;
 import models.Property;
 import models.PropertyOwner;
 
+/**
+ * SearchPropertyDB will be responsible for all the properties, property_owner
+ * and property_image_urls related database works
+ */
 public class SearchPropertyDB {
 
+    /**
+     * Get all the properties
+     */
     public static LinkedList<Property> getAllProperties() {
         LinkedList<Property> properties = new LinkedList<>();
         String query = "select * from property";
@@ -43,8 +50,7 @@ public class SearchPropertyDB {
                 String coverImageUrl = resultSet.getString("cover_image_url");
                 String gifUrl = resultSet.getString("gif_url");
 
-                properties.add(new Property(id, title, description, address, minPrice, maxPrice, status, ownerId,
-                        coverImageUrl, gifUrl));
+                properties.add(new Property(id, title, description, address, minPrice, maxPrice, status, ownerId, coverImageUrl, gifUrl));
             }
         } catch (SQLException se) {
             // Handle errors for JDBC
@@ -71,10 +77,13 @@ public class SearchPropertyDB {
         return properties;
     };
 
+    /**
+     * Get all properties where the title or the address has location, passed by the
+     * user
+     */
     public static LinkedList<Property> getPropertiesForLocation(String location) {
         LinkedList<Property> properties = new LinkedList<>();
-        String query = "select * from property where address like '%" + location + "%' or title like '%" + location
-                + "%'";
+        String query = "select * from property where address like '%" + location + "%' or title like '%" + location + "%'";
 
         Connection conn = null;
         Statement statement = null;
@@ -103,8 +112,7 @@ public class SearchPropertyDB {
                 String coverImageUrl = resultSet.getString("cover_image_url");
                 String gifUrl = resultSet.getString("gif_url");
 
-                properties.add(new Property(id, title, description, address, minPrice, maxPrice, status, ownerId,
-                        coverImageUrl, gifUrl));
+                properties.add(new Property(id, title, description, address, minPrice, maxPrice, status, ownerId, coverImageUrl, gifUrl));
             }
         } catch (SQLException se) {
             // Handle errors for JDBC
@@ -131,6 +139,9 @@ public class SearchPropertyDB {
         return properties;
     };
 
+    /**
+     * Get individual property using the propertyId
+     */
     public static Property getPropertiesForLocation(int propertyId) {
         Property property = null;
         String query = "select * from property where id = " + propertyId;
@@ -162,8 +173,7 @@ public class SearchPropertyDB {
                 String coverImageUrl = resultSet.getString("cover_image_url");
                 String gifUrl = resultSet.getString("gif_url");
 
-                property = new Property(id, title, description, address, minPrice, maxPrice, status, ownerId,
-                        coverImageUrl, gifUrl);
+                property = new Property(id, title, description, address, minPrice, maxPrice, status, ownerId, coverImageUrl, gifUrl);
             }
         } catch (SQLException se) {
             // Handle errors for JDBC
@@ -189,6 +199,10 @@ public class SearchPropertyDB {
         return property;
     }
 
+    /**
+     * Get property owener from the property_owner table using the ownerId from the
+     * property
+     */
     public static PropertyOwner getPropertyOwner(int ownerId) {
         PropertyOwner owner = null;
         String query = "select * from property_owner where id = " + ownerId + " limit 1";
@@ -242,6 +256,9 @@ public class SearchPropertyDB {
         return owner;
     }
 
+    /**
+     * Get all the property images from the property_image_urls using the propertId
+     */
     public static LinkedList<String> getPropertyImageUrls(int propertyId) {
         LinkedList<String> urls = new LinkedList<>();
         String query = "select * from property_image_urls where property_id = " + propertyId;

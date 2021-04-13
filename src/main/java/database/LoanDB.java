@@ -9,7 +9,14 @@ import java.util.LinkedList;
 
 import models.Loan;
 
+/**
+ * LoanDB will be responsible for all the loans related database work
+ */
 public class LoanDB {
+
+    /**
+     * Get all the bank loans info
+     */
     public static LinkedList<Loan> getAllBankLoans() {
         LinkedList<Loan> loans = new LinkedList<>();
         String query = "select * from loan";

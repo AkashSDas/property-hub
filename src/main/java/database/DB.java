@@ -1,5 +1,8 @@
 package database;
 
+/**
+ * DB will have all the common database related properties and methods
+ */
 public class DB {
     // JDBC driver name and database URL
     static final String DATABASE_NAME = "property_hub";

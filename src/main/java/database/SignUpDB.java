@@ -10,7 +10,14 @@ import java.util.Base64;
 import utility.PasswordHash;
 import utility.PasswordHashGenerate;
 
+/**
+ * SignUpDB will be responsible for user related database work
+ */
 public class SignUpDB {
+
+    /**
+     * Check if the user exists or not
+     */
     public static boolean checkUserExists(String email) {
         boolean userExists = false;
         String query = "select count(*) from users where email = " + "'" + email + "'";
@@ -58,6 +65,10 @@ public class SignUpDB {
         return userExists;
     };
 
+    /**
+     * Saving the user's data (email) and then hashing the password, saving that
+     * hash and salt in the passwords table
+     */
     public static boolean signUpUser(String email, String password) {
         boolean userCreated = false;
         String query = "insert into users values(0, '" + email + "')";
@@ -89,8 +100,7 @@ public class SignUpDB {
 
                 // Decoding salt
                 String salt = Base64.getEncoder().encodeToString(generatedHash.salt);
-                query = "insert into passwords values(0, '" + generatedHash.hashedPassword + "', '" + salt + "', " + id
-                        + ")";
+                query = "insert into passwords values(0, '" + generatedHash.hashedPassword + "', '" + salt + "', " + id + ")";
                 result = statement.executeUpdate(query);
             }
         } catch (SQLException se) {
@@ -117,5 +127,4 @@ public class SignUpDB {
 
         return userCreated;
     };
-
 }

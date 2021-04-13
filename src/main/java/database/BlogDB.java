@@ -9,7 +9,14 @@ import java.util.LinkedList;
 
 import models.Blog;
 
+/**
+ * BlogDB will be responsible for all the blog related database work
+ */
 public class BlogDB {
+
+    /**
+     * Get all the blogs
+     */
     public static LinkedList<Blog> getAllBlogs() {
         LinkedList<Blog> blogs = new LinkedList<>();
         String query = "select * from blog";
@@ -40,8 +47,7 @@ public class BlogDB {
                 String coverImageUrl = resultSet.getString("cover_image_url");
                 String gifUrl = resultSet.getString("gif_url");
 
-                blogs.add(new Blog(id, authorName, authorImageUrl, publishedDate, title, description, text,
-                        coverImageUrl, gifUrl));
+                blogs.add(new Blog(id, authorName, authorImageUrl, publishedDate, title, description, text, coverImageUrl, gifUrl));
             }
         } catch (SQLException se) {
             // Handle errors for JDBC
@@ -68,6 +74,9 @@ public class BlogDB {
         return blogs;
     }
 
+    /**
+     * Get individual blog
+     */
     public static Blog getBlog(int blogId) {
         Blog blog = null;
         String query = "select * from blog where id = " + blogId + " limit 1";
@@ -98,8 +107,7 @@ public class BlogDB {
                 String coverImageUrl = resultSet.getString("cover_image_url");
                 String gifUrl = resultSet.getString("gif_url");
 
-                blog = new Blog(id, authorName, authorImageUrl, publishedDate, title, description, text, coverImageUrl,
-                        gifUrl);
+                blog = new Blog(id, authorName, authorImageUrl, publishedDate, title, description, text, coverImageUrl, gifUrl);
                 break;
             }
         } catch (SQLException se) {
