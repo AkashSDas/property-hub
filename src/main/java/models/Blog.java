@@ -29,8 +29,7 @@ public class Blog implements Serializable {
         this.setGifUrl("");
     }
 
-    public Blog(int id, String authorName, String authorImageUrl, String publishedDate, String title,
-            String description, String text, String coverImageUrl, String gifUrl) {
+    public Blog(int id, String authorName, String authorImageUrl, String publishedDate, String title, String description, String text, String coverImageUrl, String gifUrl) {
         this.setId(id);
         this.setAuthorName(authorName);
         this.setAuthorImageUrl(authorImageUrl);
@@ -42,11 +41,17 @@ public class Blog implements Serializable {
         this.setGifUrl(gifUrl);
     }
 
+    /**
+     * Get word count of the text field
+     */
     public int getWordCount() {
         int wordCount = this.text.trim().split(" ").length;
         return wordCount;
     }
 
+    /**
+     * Get the reading time in minutes for the text field
+     */
     public int getMinutesToRead() {
         int minutesToRead = (this.getWordCount() / 100 + 1);
         return minutesToRead;

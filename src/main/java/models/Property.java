@@ -31,8 +31,7 @@ public class Property implements Serializable {
         this.setGifUrl("");
     }
 
-    public Property(int id, String title, String description, String address, float minPrice, float maxPrice,
-            String status, int ownerId, String coverImageUrl, String gifUrl) {
+    public Property(int id, String title, String description, String address, float minPrice, float maxPrice, String status, int ownerId, String coverImageUrl, String gifUrl) {
         this.setId(id);
         this.setTitle(title);
         this.setDescription(description);

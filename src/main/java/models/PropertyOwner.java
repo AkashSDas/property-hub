@@ -23,8 +23,7 @@ public class PropertyOwner implements Serializable {
         this.setOwnerImageUrl("");
     }
 
-    public PropertyOwner(int id, String firstName, String lastName, String phoneNumber, String email,
-            String ownerImageUrl) {
+    public PropertyOwner(int id, String firstName, String lastName, String phoneNumber, String email, String ownerImageUrl) {
         this.setId(id);
         this.setFirstName(firstName);
         this.setLastName(lastName);

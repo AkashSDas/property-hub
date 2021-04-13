@@ -23,8 +23,7 @@ public class Loan implements Serializable {
         this.setDescription("");
     }
 
-    public Loan(int id, String bankName, String bankLogoImageUrl, float minLoanAmount, float maxLoanAmount,
-            String description) {
+    public Loan(int id, String bankName, String bankLogoImageUrl, float minLoanAmount, float maxLoanAmount, String description) {
         this.setId(id);
         this.setBankName(bankName);
         this.setBankLogoImageUrl(bankLogoImageUrl);
